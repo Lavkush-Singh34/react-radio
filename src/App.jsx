@@ -169,7 +169,7 @@ const RadioPlayer = () => {
 
     return (
         <div className="player-container" onWheel={handleWheel}>
-            <h1>Online radio</h1>
+            <h1>Online Radio</h1>
             <audio ref={radioPlayerRef} controls>
                 <source src="https://drive.uber.radio/uber/bollywoodnow/icecast.audio" type="audio/mpeg" />
                 Your browser does not support the audio element.
