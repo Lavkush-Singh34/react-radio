@@ -99,10 +99,14 @@ const RadioPlayer = () => {
     useEffect(() => {
         // Load the saved volume level or set it to 50% if no volume is saved
         const savedVolume = localStorage.getItem('radioPlayerVolume');
+        console.log('Loaded volume from localStorage:', savedVolume);
+
         const initialVolume = savedVolume !== null ? parseFloat(savedVolume) : 0.5;
         setVolume(initialVolume);
+
         if (radioPlayerRef.current) {
             radioPlayerRef.current.volume = initialVolume;
+            console.log('Set initial volume to:', initialVolume);
         }
 
         // Event listeners for audio loading and playing
@@ -126,17 +130,16 @@ const RadioPlayer = () => {
 
     useEffect(() => {
         // Save the volume level whenever it changes
+        console.log('Saving volume to localStorage:', volume);
+        localStorage.setItem('radioPlayerVolume', volume);
         if (radioPlayerRef.current) {
-            localStorage.setItem('radioPlayerVolume', volume);
+            radioPlayerRef.current.volume = volume;
         }
     }, [volume]);
 
     const handleVolumeChange = (event) => {
         const newVolume = event.target.value / 100;
         setVolume(newVolume);
-        if (radioPlayerRef.current) {
-            radioPlayerRef.current.volume = newVolume;
-        }
     };
 
     const handleWheel = (event) => {
@@ -150,9 +153,6 @@ const RadioPlayer = () => {
         newVolume = Math.min(Math.max(newVolume, 0), 1); // Clamp the value between 0 and 1
 
         setVolume(newVolume);
-        if (radioPlayerRef.current) {
-            radioPlayerRef.current.volume = newVolume;
-        }
     };
 
     const handlePlay = () => {
@@ -178,7 +178,7 @@ const RadioPlayer = () => {
                 <button onClick={handlePlay} disabled={loading}>Play</button>
                 <button onClick={handlePause}>Pause</button>
             </div>
-            {loading && <div className="loader">Loading</div>}
+            {loading && <div className="loader"></div>}
             <div className="volume-control">
                 <label htmlFor="volumeSlider">Volume: <span id="volumeLabel">{Math.round(volume * 100)}</span>%</label>
                 <input
