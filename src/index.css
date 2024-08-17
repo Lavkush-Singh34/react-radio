@@ -132,7 +132,7 @@ button:hover {
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
-  margin: 0 auto;
+  margin: 1rem auto 0 ;
 }
 
 @keyframes spin {
