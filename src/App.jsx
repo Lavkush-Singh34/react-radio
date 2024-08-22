@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Footer from './components/Footer'; // Import the Footer component
+import Footer from './components/Footer.jsx'; // Import the Footer component
 import './App.css'; // Import the main styles including dark/light mode styles
 
 const App = () => {
