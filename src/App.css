@@ -5,9 +5,13 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
-    
-    
-    background-image: radial-gradient(#474bff 2px, transparent 2px);
+
+
+    /* background-image: radial-gradient(#474bff 2px, transparent 2px);
+    background-size: 32px 32px;
+    background-color: #fef9f2; */
+
+    background-image: radial-gradient(#adaeef 2px, transparent 2px);
     background-size: 32px 32px;
     background-color: #fef9f2;
     color: #000;
