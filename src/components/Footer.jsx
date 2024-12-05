@@ -5,8 +5,7 @@ import './Footer.css'; // Import the CSS file for styling
 const Footer = () => {
     return (
         <footer className="footer">
-            <p>Contact: <a href="mailto:lavkushsingh1998@gmail.com">lavkushsingh1998@gmail.com</a></p>
-            <p>WhatsApp Me: <a href="https://wa.me/+918127173818">LAVKUSH SINGH</a></p>
+            <p>WhatsApp Me: <a href="https://wa.me/+919415120167">Globe Vista News</a></p>
 
         </footer>
     );
